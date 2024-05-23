@@ -18,6 +18,8 @@ export const ReservationPage = () => {
     fetchData();
   }, []);
 
+  console.log(reservation);
+
   return (
     reservation !== null && (
       <div className="reservation container">

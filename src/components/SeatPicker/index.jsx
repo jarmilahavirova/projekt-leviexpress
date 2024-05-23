@@ -2,14 +2,19 @@ import { Seat } from "../Seat";
 import { SeatRow } from "../SeatRow";
 import "./style.css";
 
-export const SeatPicker = ({ seats, selectedSeat }) => {
+export const SeatPicker = ({ seats, selectedSeat, onSeatSelected }) => {
   return (
     <div className="seat-picker container">
       <h2>Vyberte sedadlo</h2>
       <div className="seats">
         {seats.map((seatRow, index) => {
           return (
-            <SeatRow key={index} row={seatRow} rowSelectedSeat={selectedSeat} />
+            <SeatRow
+              key={index}
+              row={seatRow}
+              rowSelectedSeat={selectedSeat}
+              onSeatSelected={onSeatSelected}
+            />
           );
         })}
       </div>
