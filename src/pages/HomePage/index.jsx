@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { JourneyPicker } from "../../components/JourneyPicker";
 import { JourneyDetail } from "../../components/JourneyDetail";
-import { SelectedSeat } from "../../components/SelectedSeat";
 import { SeatPicker } from "../../components/SeatPicker";
 
 export const HomePage = () => {
@@ -37,8 +36,11 @@ export const HomePage = () => {
   return (
     <main>
       <JourneyPicker onJourneyChange={handleJourneyChange} />
+
       {journey !== null && <JourneyDetail journey={journey} />}
-      <SeatPicker />
+
+      {journey !== null && <SeatPicker seats={journey.seats} />}
+
       <div className="controls container">
         <button className="btn btn--big" type="button" onClick={handleBuy}>
           Rezervovat
