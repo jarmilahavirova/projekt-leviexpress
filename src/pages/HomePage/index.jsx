@@ -39,7 +39,9 @@ export const HomePage = () => {
 
       {journey !== null && <JourneyDetail journey={journey} />}
 
-      {journey !== null && <SeatPicker seats={journey.seats} />}
+      {journey !== null && (
+        <SeatPicker seats={journey.seats} selectedSeat={journey.autoSeat} />
+      )}
 
       <div className="controls container">
         <button className="btn btn--big" type="button" onClick={handleBuy}>
